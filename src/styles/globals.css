@@ -8,10 +8,31 @@
   font-family: "Poppins", sans-serif;
 }
 
-.bg-primary {
-  background-color: #141111;
+body{
+    background-color: #141111;
+}
+
+.primary-btn{
+  background-color: #6b5dfd;
+}
+
+.primary-btn:hover{
+  background-color: white;
+  color: #6b5dfd;
 }
 
 .text-primary {
-  color: #72a7ec;
+  color: #6b5dfd;
+}
+
+.text-secondary {
+  color: white;
+}
+
+.header{
+  height: 13vh;
+}
+
+.landing-page{
+  height: 86vh;
 }

@@ -7,7 +7,7 @@ import { useEffect } from "react";
 export default function App({ Component, pageProps }: AppProps) {
   const { initialize } = useHuddle01();
 
-  // initialize huddle01 connection
+  // initialize huddle01 sdk
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_PROJECT_ID) {
       initialize(process.env.NEXT_PUBLIC_PROJECT_ID);
