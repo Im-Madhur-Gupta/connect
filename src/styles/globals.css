@@ -21,6 +21,14 @@ body{
   color: #6b5dfd;
 }
 
+.bg-color-primary{
+  background-color: #6b5dfd;
+}
+
+.custom-input{
+  color: #6b5dfd;
+}
+
 .text-primary {
   color: #6b5dfd;
 }
