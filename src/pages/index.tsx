@@ -1,4 +1,5 @@
 import { useHuddle01 } from "@huddle01/react";
+import { useRouter } from "next/router";
 
 import Heading from "@/components/ui/Heading";
 import TypingAnimation from "@/components/animations/TypingAnimation";
@@ -7,17 +8,21 @@ import Button from "@/components/ui/Button";
 
 export default function Home() {
   const { isInitialized } = useHuddle01();
+  const router = useRouter();
+
+  const handleGetStarted = () => {
+    router.push("/get-started");
+  };
 
   return (
-    <main className="landing-page flex items-center justify-around px-16">
+    <main className="page-container flex items-center justify-around px-16">
       <div className="flex flex-col justify-evenly items-center">
         <Heading additionalClassNames="text-8xl">Connect</Heading>
         <TypingAnimation />
         <Button
+          isDisabled={!isInitialized}
           additionalClassNames="mt-16"
-          onClick={() => {
-            console.log("click");
-          }}
+          onClick={handleGetStarted}
         >
           Get Started
         </Button>

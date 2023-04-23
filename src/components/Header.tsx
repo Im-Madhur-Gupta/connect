@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 import Heading from "./ui/Heading";
 import SubHeading from "./ui/SubHeading";
@@ -9,9 +10,12 @@ const Header = () => {
       <Link href="/">
         <Heading additionalClassNames="ml-3.5">Connect</Heading>
       </Link>
-      <Link href="/about">
-        <SubHeading>About</SubHeading>
-      </Link>
+      <div className="flex items-center gap-x-16">
+        <Link href="/about">
+          <SubHeading>About</SubHeading>
+        </Link>
+        <ConnectButton />
+      </div>
     </header>
   );
 };
