@@ -16,7 +16,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   return (
     <button
       disabled={isDisabled}
-      className={`primary-btn w-fit rounded-2xl text-white text-2xl px-10 py-3.5 transition-all ${additionalClassNames}`}
+      className={`bg-primary w-fit rounded-2xl text-white text-2xl px-10 py-3.5 transition-all hover:bg-secondary hover:text-primary ${additionalClassNames}`}
       onClick={onClick}
     >
       {children}

@@ -4,43 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  font-family: "Poppins", sans-serif;
-}
-
-body{
-    background-color: #141111;
-}
-
-.primary-btn{
-  background-color: #6b5dfd;
-}
-
-.primary-btn:hover{
-  background-color: white;
-  color: #6b5dfd;
-}
-
-.bg-color-primary{
-  background-color: #6b5dfd;
-}
-
-.custom-input{
-  color: #6b5dfd;
-}
-
-.text-primary {
-  color: #6b5dfd;
-}
-
-.text-secondary {
-  color: white;
-}
-
-.header{
-  height: 13vh;
-}
-
-.page-container{
-  height: 86vh;
+body {
+  background-color: #141111;
 }

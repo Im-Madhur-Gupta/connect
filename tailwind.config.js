@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Poppins', ...defaultTheme.fontFamily.sans],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -15,7 +20,10 @@ module.exports = {
       colors: {
         primary: '#6b5dfd',
         secondary: "#fff"
-      }
+      },
+      spacing: {
+        'page-container': "86vh", // used to set the height of the page container
+      },
     },
   },
   plugins: [],

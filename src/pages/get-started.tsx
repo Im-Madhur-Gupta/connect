@@ -42,7 +42,7 @@ const GetStartedPage = () => {
   };
 
   return (
-    <div className="page-container w-1/2 mx-auto mt-10 flex flex-col justify-start items-center">
+    <div className="h-page-container w-1/2 mx-auto mt-10 flex flex-col justify-start items-center">
       <Heading additionalClassNames="text-6xl">Get Started</Heading>
       <div className="w-full h-fit flex items-center justify-evenly mt-16">
         <Button
@@ -52,13 +52,13 @@ const GetStartedPage = () => {
         >
           Create a new room
         </Button>
-        <div className="w-1 h-96 bg-color-primary" />
+        <div className="w-1 h-96 bg-primary" />
         <div className="w-1/3 flex flex-col items-center">
           <input
             ref={roomIdInputRef}
             type="text"
             placeholder="Room ID"
-            className="custom-input focus:outline-0 mb-8 w-72 p-3 text-lg rounded-xl"
+            className="text-primary focus:outline-0 mb-8 w-72 p-3 text-lg rounded-xl"
           />
           <Button isDisabled={!joinLobby.isCallable} onClick={joinRoomHandler}>
             Join Lobby

@@ -6,7 +6,7 @@ import SubHeading from "./ui/SubHeading";
 
 const Header = () => {
   return (
-    <header className="header flex items-center justify-between px-16">
+    <header className="h-[13vh] flex items-center justify-between px-16">
       <Link href="/">
         <Heading additionalClassNames="ml-3.5">Connect</Heading>
       </Link>

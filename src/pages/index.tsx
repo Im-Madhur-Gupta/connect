@@ -15,7 +15,7 @@ export default function Home() {
   };
 
   return (
-    <main className="page-container flex items-center justify-around px-16">
+    <main className="h-page-container flex items-center justify-around px-16">
       <div className="flex flex-col justify-evenly items-center">
         <Heading additionalClassNames="text-8xl">Connect</Heading>
         <TypingAnimation />
