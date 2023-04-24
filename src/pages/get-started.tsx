@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 
 import { useLobby } from "@huddle01/react/hooks";
 import { toast } from "react-hot-toast";
@@ -8,6 +9,7 @@ import Heading from "@/components/ui/Heading";
 import Button from "@/components/ui/Button";
 
 const GetStartedPage = () => {
+  const router = useRouter();
   const { joinLobby } = useLobby();
   const roomIdInputRef = React.useRef<HTMLInputElement>(null);
 
@@ -19,6 +21,8 @@ const GetStartedPage = () => {
     }
 
     joinLobby(roomId);
+
+    router.push(`/lobby`);
   };
 
   const createRoomHandler = async () => {
@@ -27,7 +31,11 @@ const GetStartedPage = () => {
       toast.success("Room created successfully");
 
       const roomId = data.roomId;
+      console.log(roomId);
+
       joinLobby(roomId);
+
+      router.push(`/lobby`);
     } catch (err) {
       toast.error("Something went wrong");
     }
@@ -37,7 +45,11 @@ const GetStartedPage = () => {
     <div className="page-container w-1/2 mx-auto mt-10 flex flex-col justify-start items-center">
       <Heading additionalClassNames="text-6xl">Get Started</Heading>
       <div className="w-full h-fit flex items-center justify-evenly mt-16">
-        <Button additionalClassNames="w-1/3 h-fit" onClick={createRoomHandler}>
+        <Button
+          additionalClassNames="w-1/3 h-fit"
+          isDisabled={!joinLobby.isCallable}
+          onClick={createRoomHandler}
+        >
           Create a new room
         </Button>
         <div className="w-1 h-96 bg-color-primary" />
@@ -48,7 +60,7 @@ const GetStartedPage = () => {
             placeholder="Room ID"
             className="custom-input focus:outline-0 mb-8 w-72 p-3 text-lg rounded-xl"
           />
-          <Button isDisabled={joinLobby.isCallable} onClick={joinRoomHandler}>
+          <Button isDisabled={!joinLobby.isCallable} onClick={joinRoomHandler}>
             Join Lobby
           </Button>
         </div>
