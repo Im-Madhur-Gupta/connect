@@ -11,6 +11,7 @@ import { polygonMumbai } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 
 import Header from "@/components/Header";
+import { MeetingContextProvider } from "@/contexts/MeetingContext";
 
 import "@rainbow-me/rainbowkit/styles.css";
 import "@/styles/globals.css";
@@ -47,9 +48,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider theme={darkTheme()} chains={chains}>
-        <Header />
-        <Component {...pageProps} />
-        <Toaster />
+        <MeetingContextProvider>
+          <Header />
+          <Component {...pageProps} />
+          <Toaster />
+        </MeetingContextProvider>
       </RainbowKitProvider>
     </WagmiConfig>
   );

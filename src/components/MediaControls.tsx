@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { MdMic, MdMicOff, MdVideocamOff, MdVideocam } from "react-icons/md";
 import { useAudio, useVideo } from "@huddle01/react/hooks";
 import { useEventListener } from "@huddle01/react";
 
 import IconButton from "./ui/IconButton";
+import { MeetingContext } from "@/contexts/MeetingContext";
 
 const MediaControls = () => {
+  const { isVideoOn, setIsVideoOn, isAudioOn, setIsAudioOn } =
+    React.useContext(MeetingContext);
+
   const { fetchAudioStream, stopAudioStream } = useAudio();
-
   const { fetchVideoStream, stopVideoStream } = useVideo();
-
-  const [isAudioOn, setIsAudioOn] = React.useState(false);
-  const [isVideoOn, setIsVideoOn] = React.useState(false);
 
   console.log("isVideoOn", isVideoOn);
   console.log("isAudioOn", isAudioOn);

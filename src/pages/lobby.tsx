@@ -29,7 +29,7 @@ const Lobby = () => {
 
   return (
     <div className="flex flex-col items-center justify-start mt-12">
-      <div className="w-[40vw] border-2 border-primary rounded-xl">
+      <div className="w-[36vw] border-2 border-primary rounded-xl">
         <video
           ref={videoRef}
           autoPlay
