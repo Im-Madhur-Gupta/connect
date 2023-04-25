@@ -17,6 +17,7 @@ import "@rainbow-me/rainbowkit/styles.css";
 import "@/styles/globals.css";
 
 import type { AppProps } from "next/app";
+import { useMeetingMachine } from "@huddle01/react/hooks";
 
 const { chains, provider } = configureChains(
   [polygonMumbai],
@@ -37,6 +38,9 @@ const wagmiClient = createClient({
 
 export default function App({ Component, pageProps }: AppProps) {
   const { initialize } = useHuddle01();
+  const { state } = useMeetingMachine();
+
+  console.log("STATE", state.value);
 
   // initialize huddle01 sdk
   useEffect(() => {

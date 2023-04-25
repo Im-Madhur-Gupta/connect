@@ -1,42 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 
-import { useRoom, useVideo } from "@huddle01/react/hooks";
-import { useEventListener } from "@huddle01/react";
-
-import MediaControls from "@/components/MediaControls";
-import Button from "@/components/ui/Button";
+import { useRoom } from "@huddle01/react/hooks";
 import { toast } from "react-hot-toast";
 
+import LocalStreamPlayer from "@/components/LocalStreamPlayer";
+import MediaControls from "@/components/MediaControls";
+import Button from "@/components/ui/Button";
+
 const Lobby = () => {
-  const videoRef = React.useRef<HTMLVideoElement>(null);
-
   const router = useRouter();
-  const { stream: videoStream } = useVideo();
-  const { joinRoom } = useRoom();
+  const { joinRoom, isRoomJoined } = useRoom();
 
-  useEventListener("lobby:cam-on", () => {
-    if (videoStream && videoRef.current) {
-      videoRef.current.srcObject = videoStream;
-      videoRef.current.play();
+  useEffect(() => {
+    if (isRoomJoined) {
+      toast.success("Joined room successfully");
+      router.push("/room");
     }
-  });
-
-  useEventListener("room:joined", () => {
-    toast.success("Joined room successfully");
-    router.push("/room");
-  });
+  }, [isRoomJoined]);
 
   return (
     <div className="flex flex-col items-center justify-start mt-12">
-      <div className="w-[36vw] border-2 border-primary rounded-xl">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          className="w-full h-full rounded-xl"
-        />
-      </div>
+      <LocalStreamPlayer />
       <MediaControls />
       <Button isDisabled={!joinRoom.isCallable} onClick={joinRoom}>
         Join Room

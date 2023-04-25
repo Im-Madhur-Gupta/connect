@@ -7,7 +7,13 @@ import { useEventListener } from "@huddle01/react";
 import IconButton from "./ui/IconButton";
 import { MeetingContext } from "@/contexts/MeetingContext";
 
-const MediaControls = () => {
+type MediaControlsProps = {
+  status?: "lobby" | "room";
+};
+
+const MediaControls: React.FunctionComponent<MediaControlsProps> = ({
+  status,
+}) => {
   const { isVideoOn, setIsVideoOn, isAudioOn, setIsAudioOn } =
     React.useContext(MeetingContext);
 
