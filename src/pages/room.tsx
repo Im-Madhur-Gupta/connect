@@ -110,7 +110,7 @@ const Room = () => {
       </div>
 
       {/* local stream */}
-      <LocalStreamPlayer additionalClassNames="w-[16vw] min-h-[20vh] absolute bottom-10 right-20" />
+      <LocalStreamPlayer additionalClassNames="w-[16vw] min-h-[22vh] absolute bottom-10 right-20" />
     </div>
   );
 };

@@ -44,7 +44,7 @@ const Lobby = () => {
 
   return (
     <div className="flex flex-col items-center justify-start mt-12">
-      <LocalStreamPlayer />
+      <LocalStreamPlayer additionalClassNames="w-[36vw] min-h-[40vh]" />
       <MediaControls
         startVideoStream={fetchVideoStream}
         isStartVideoStreamCallable={fetchVideoStream.isCallable}

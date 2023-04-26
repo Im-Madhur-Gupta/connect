@@ -28,7 +28,7 @@ const LocalStreamPlayer: React.FunctionComponent<LocalStreamPlayerProps> = ({
 
   return (
     <div
-      className={`w-[36vw] min-h-[40vh] flex items-center justify-center border-2 border-primary rounded-xl ${additionalClassNames}`}
+      className={`flex items-center justify-center border-2 border-primary rounded-xl ${additionalClassNames}`}
     >
       {isVideoOn ? (
         <video ref={videoRef} autoPlay muted className="w-full rounded-xl" />
