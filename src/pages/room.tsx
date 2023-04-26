@@ -10,6 +10,8 @@ import IncomingStreamPlayer from "@/components/IncomingStreamPlayer";
 import IconButton from "@/components/ui/IconButton";
 
 import { MdCallEnd } from "react-icons/md";
+import { CiMenuKebab } from "react-icons/ci";
+import VideoEffectsModal from "@/components/VideoEffectsModal";
 
 const Room = () => {
   const router = useRouter();
@@ -29,6 +31,8 @@ const Room = () => {
   } = useVideo();
   const { leaveRoom } = useRoom();
   const { peerIds, peers } = usePeers();
+
+  const [showModal, setShowModal] = React.useState(false);
 
   console.log("peerIds", peerIds);
   console.log("peers", peers);
@@ -73,6 +77,10 @@ const Room = () => {
     }
   }, [isProducingAudio]);
 
+  if (showModal) {
+    return <VideoEffectsModal setShowModal={setShowModal} />;
+  }
+
   return (
     <div className="h-page-container relative flex flex-col items-center justify-between">
       {/* incoming streams */}
@@ -107,10 +115,15 @@ const Room = () => {
         >
           <MdCallEnd className="w-full h-full text-secondary bg-red-600 p-3 rounded-full" />
         </IconButton>
+
+        {/* video effects button */}
+        <IconButton onClick={() => setShowModal(true)}>
+          <CiMenuKebab className="w-full h-full text-secondary" />
+        </IconButton>
       </div>
 
       {/* local stream */}
-      <LocalStreamPlayer additionalClassNames="w-[16vw] min-h-[20vh] absolute bottom-10 right-20" />
+      <LocalStreamPlayer additionalClassNames="w-[15vw] min-h-[18vh] absolute bottom-10 right-20" />
     </div>
   );
 };

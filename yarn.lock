@@ -985,6 +985,11 @@
     "@tanstack/query-core" "4.29.1"
     use-sync-external-store "^1.2.0"
 
+"@twilio/video-processors@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@twilio/video-processors/-/video-processors-2.0.0.tgz#7438d457e1078a66e0201b38926b5a285eba5bad"
+  integrity sha512-JbcSe032zppy11LXKV3WXHqSmntTvu5oEspZwyiWcjR5DbjJ4+SnQc6zK3iUaoMOER2r6k+295cwCiLftAlA5Q==
+
 "@types/connect@^3.4.33":
   version "3.4.35"
   resolved "https://registry.yarnpkg.com/@types/connect/-/connect-3.4.35.tgz#5fcf6ae445e4021d1fc2219a4873cc73a3bb2ad1"

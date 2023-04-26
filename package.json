@@ -11,6 +11,7 @@
   "dependencies": {
     "@huddle01/react": "^0.0.7",
     "@rainbow-me/rainbowkit": "^0.12.9",
+    "@twilio/video-processors": "^2.0.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.37",
     "@types/react-dom": "18.0.11",
